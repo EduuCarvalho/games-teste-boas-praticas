@@ -7,11 +7,12 @@ import { faker } from "@faker-js/faker";
 const api = supertest(app);
 
 beforeEach(async () => {
-    await prisma.console.deleteMany({});;
+    await prisma.game.deleteMany({});
+    await prisma.console.deleteMany({});
   });
 
 
-describe("/GET consoles", () => {
+describe("/GET consoles",   () => {
 
     it("should respond with status 200", async () => {
        const newConsole = await createConsole();
